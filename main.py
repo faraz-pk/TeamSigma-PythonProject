@@ -35,7 +35,6 @@ def calculator():
         else:
             print("Invalid Input")
             
-calculator()
 def asad_guessing_game():
     import random
 
@@ -72,3 +71,14 @@ def asad_guessing_game():
         if play_again != "yes":
             print("Thanks for playing!")
             break
+
+print("1. To open Calculator")
+print("1. To play number guessing game")
+choice = int(input("Enter choice: "))
+
+if choice == 1:
+    calculator()
+elif choice == 2:
+    asad_guessing_game()
+else:
+    print("Invalid choice!")
