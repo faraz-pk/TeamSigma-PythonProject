@@ -36,3 +36,39 @@ def calculator():
             print("Invalid Input")
             
 calculator()
+def asad_guessing_game():
+    import random
+
+    while True:
+        secret_number = random.randint(1, 50)
+        attempt_count = 0
+
+        print("I'm thinking of a number between 1 and 50...")
+
+        while True:
+            user_input = input("Enter your guess (1-50): ")
+
+            try:
+                user_guess = int(user_input)
+            except ValueError:
+                print("Invalid input! Enter a NUMBER.")
+                continue
+
+            if user_guess < 1 or user_guess > 50:
+                print("Out of range! Enter a number between 1 and 50.")
+                continue
+
+            attempt_count += 1
+
+            if user_guess < secret_number:
+                print("Too low!")
+            elif user_guess > secret_number:
+                print("Too high!")
+            else:
+                print(f"Correct! You guessed it in {attempt_count} attempts.")
+                break
+
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            print("Thanks for playing!")
+            break
